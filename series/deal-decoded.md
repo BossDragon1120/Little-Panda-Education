@@ -1,5 +1,6 @@
 # Deal Decoded
 
+**Subject:** Business · **Input:** 📰 news scout
 **Premise:** $1B+ M&A announcements, explained for people who don't work in finance.
 **Format:** 75–90 s talk track in six parts, ending with a deal card that's worth a screenshot. See [`deal-decoded-script`](../skills/deal-decoded-script).
 **Look:** navy + green. Clean and editorial, with no mascot on screen.

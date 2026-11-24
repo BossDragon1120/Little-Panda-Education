@@ -1,44 +1,69 @@
 # 🐼 Little Panda Education
 
-A set of Claude agents and skills that turn **AI and M&A topics into short educational videos**. Each stage of the pipeline is its own skill or agent: finding stories, writing scripts, building slides, assembling video and, later, posting and tracking engagement. I stay in the loop where it matters: reviewing scripts and recording my own voice.
+**Little Panda Education** is a TikTok account that teaches **Business, Tech and AI** in short videos. This repo holds the Claude agents and skills that produce it: finding the story, writing the script, building vertical slides, assembling video with my own voiceover, and (later) posting and learning from engagement.
+
+## Two kinds of input
+
+| Input | Where it comes from | What it becomes |
+|---|---|---|
+| 📰 **What's happening** | News and filings, watched by scout agents (e.g. new $1B+ M&A deals) | Timely explainers such as Deal Decoded |
+| 📚 **What I'm learning** | My separate upskilling repo, where I keep notes from courses and deep-learning work | Evergreen explainers: if I learned it, I teach it |
+
+The second input is the flywheel: every course I take produces notes, and those notes become a series of videos.
 
 ## Pipeline
 
 ```
-  ① SCOUT          ② SCRIPT          ③ SLIDES            ④ ASSEMBLE           ⑤ PUBLISH & LEARN
-  (agents)         (skills)          (skills)            (agent)              (agents)
- ┌──────────┐    ┌────────────┐    ┌──────────────┐    ┌────────────────┐    ┌──────────────────┐
- │ find the │ →  │ write the  │ →  │ build slides │ →  │ slides + my    │ →  │ post, then track │
- │ story    │    │ talk track │    │ per series   │    │ audio → video  │    │ engagement       │
- └──────────┘    └────────────┘    └──────────────┘    └────────────────┘    └──────────────────┘
-                        │                                     ▲
-                        └──────── 🎙️ I review & record ───────┘
+ ① INPUTS                     ② SCRIPT        ③ SLIDES          ④ ASSEMBLE         ⑤ PUBLISH & LEARN
+ ┌──────────────────────┐
+ │ 📰 news scouts       │──┐
+ │   (agents)           │  │   ┌──────────┐   ┌────────────┐   ┌──────────────┐   ┌────────────────┐
+ └──────────────────────┘  ├─▶ │ talk     │ ▶ │ 9:16 TikTok│ ▶ │ slides + my  │ ▶ │ post, then     │
+ ┌──────────────────────┐  │   │ track    │   │ slides     │   │ audio → MP4  │   │ track what     │
+ │ 📚 learning-notes    │──┘   │ (skills) │   │ (skills)   │   │ (agent)      │   │ works (agents) │
+ │   intake (agent)     │      └────┬─────┘   └────────────┘   └──────▲───────┘   └───────┬────────┘
+ └──────────────────────┘           └──── 🎙️ I review & record ───────┘                   │
+            ▲                                                                              │
+            └────────────────── engagement data shapes what gets made next ◀──────────────┘
 ```
 
-**Why split it up this way:** **agents** handle stages that run on their own, make decisions or call other pieces (scouting, assembling, posting). **Skills** hold the house formats: how a Deal Decoded script is shaped, how a vocab slide looks. Formats change often and agents change rarely, so keeping them apart means a format change never touches an agent.
+**Why split it up this way:** **agents** handle stages that run on their own, make decisions or call other pieces (scouting, intake, assembling, posting). **Skills** hold the house formats: how a Deal Decoded script is shaped, how an AI Vocab slide looks. Formats change often and agents change rarely, so keeping them apart means a format change never touches an agent.
 
-## Series
+## Built for TikTok first
+Every format is designed for TikTok before any other platform:
+- **Vertical 9:16**, so slides and video are built for a phone screen.
+- **Hook in the first seconds**, with an on-screen line, because people decide within a couple of seconds whether to keep watching.
+- **On-screen text throughout**, because many people watch with the sound off.
+- **Key content kept clear of TikTok's on-screen buttons and caption area.**
+- **60–90 seconds**: one idea per video, ending with something worth saving or screenshotting.
 
-| Series | What it is | Look |
-|---|---|---|
-| [**Deal Decoded**](series/deal-decoded.md) | $1B+ M&A announcements explained for non-bankers | Navy + green |
-| [**AI Vocab**](series/ai-vocab.md) | One AI term per video, in plain language | Golden Gate Bridge photography backgrounds |
-| [**Course Explainers**](series/course-explainers.md) | Module-by-module summaries of AI courses | Its own style |
+## Subjects and series
+
+| Subject | Series | Input | What it is | Look |
+|---|---|---|---|---|
+| **Business** | [**Deal Decoded**](series/deal-decoded.md) | 📰 News | $1B+ M&A announcements explained for people who don't work in finance | Navy + green |
+| **AI** | [**AI Vocab**](series/ai-vocab.md) | 📚 Notes | One AI term per video, in plain language | Golden Gate Bridge photography |
+| **AI · Tech · Business** | [**Course Explainers**](series/course-explainers.md) | 📚 Notes | The key ideas from a course module I just took | Its own style |
+| **Tech** | _coming_ | 📰 / 📚 | _To be defined_ | |
 
 ## Components
 
-| Stage | Component | Type | Series | Status |
+| Stage | Component | Type | Feeds | Status |
 |---|---|---|---|---|
-| ① Scout | [`deal-decoded-scout`](agents/deal-decoded-scout.md) | Agent | Deal Decoded | ✅ Running daily |
+| ① Input | [`deal-decoded-scout`](agents/deal-decoded-scout.md) | Agent | Deal Decoded | ✅ Running daily |
+| ① Input | `learning-notes-intake` | Agent | AI Vocab, Course Explainers | 🛠️ Planned |
 | ② Script | [`deal-decoded-script`](skills/deal-decoded-script) | Skill | Deal Decoded | ✅ Built |
 | ② Script | `ai-vocab-script` | Skill | AI Vocab | 🛠️ Planned |
 | ② Script | `course-explainer-script` | Skill | Course Explainers | 🛠️ Planned |
+| ③ Slides | `tiktok-format` | Skill (shared) | All slide builders | 🛠️ Planned |
 | ③ Slides | `deal-decoded-slides` | Skill | Deal Decoded | 🛠️ Planned |
 | ③ Slides | `ai-vocab-slides` | Skill | AI Vocab | 🛠️ Planned |
 | ③ Slides | `course-explainer-slides` | Skill | Course Explainers | 🛠️ Planned |
 | ④ Assemble | `video-assembler` | Agent | All | 🛠️ Planned |
 | ⑤ Publish | `tiktok-poster` | Agent | All | 💡 Idea |
-| ⑤ Learn | `engagement-tracker` | Agent | All | 💡 Idea |
+| ⑤ Learn | `engagement-tracker` | Agent | All, plus inputs | 💡 Idea |
+
+**How `learning-notes-intake` will work:** it watches the upskilling repo for new or updated course notes, picks the ideas that teach well in 60–90 seconds, and hands each one to the matching script skill (a term goes to AI Vocab, a module summary goes to Course Explainers). Notes stay in the upskilling repo, and this repo only reads them.
 
 ## Install
 
@@ -55,7 +80,7 @@ A set of Claude agents and skills that turn **AI and M&A topics into short educa
 ## Repo layout
 
 ```
-agents/            stages that run on their own (scout, assembler, poster, tracker)
+agents/            stages that run on their own (scouts, notes intake, assembler, poster, tracker)
 skills/            house formats (scripts and slides for each series)
 series/            premise, look and status for each series
 templates/         starting points for new skills and agents
@@ -65,6 +90,8 @@ scripts/validate.py   checks every skill and agent's frontmatter (runs in CI)
 
 ## Principles
 - **A human is in the loop on purpose.** Agents draft; I review and record every voiceover. Nothing posts without me.
+- **TikTok first.** Vertical, hook up front, readable with the sound off.
+- **Teach what I learn.** My course notes become videos, so learning and making content reinforce each other.
 - **Primary sources only.** Figures come from filings and press releases. If a number wasn't disclosed, it isn't shown.
 - **One format per series, kept in a skill**, so each series stays consistent and is easy to change in one place.
 

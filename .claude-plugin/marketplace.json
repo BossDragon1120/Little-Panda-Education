@@ -1,11 +1,13 @@
 {
   "name": "little-panda-education",
-  "owner": { "name": "BossDragon1120" },
+  "owner": {
+    "name": "BossDragon1120"
+  },
   "plugins": [
     {
       "name": "little-panda-education",
       "source": "./",
-      "description": "Short-form educational video pipeline: scout, script, slides, assemble, publish."
+      "description": "TikTok-first pipeline for Business, Tech and AI explainers: inputs, script, slides, assemble, publish."
     }
   ]
 }
