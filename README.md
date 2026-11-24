@@ -2,14 +2,15 @@
 
 **Little Panda Education** is a TikTok account that teaches **Business, Tech and AI** in short videos. This repo holds the Claude agents and skills that produce it: finding the story, writing the script, building vertical slides, assembling video with my own voiceover, and (later) posting and learning from engagement.
 
-## Two kinds of input
+## Inputs
 
 | Input | Where it comes from | What it becomes |
 |---|---|---|
 | 📰 **What's happening** | News and filings, watched by scout agents (e.g. new $1B+ M&A deals) | Timely explainers such as Deal Decoded |
 | 📚 **What I'm learning** | My notes repo, [Upskilling & Subject Matter Expertise](https://github.com/BossDragon1120/Upskilling-and-Subject-Matter-Expertise), with notes from courses and deep dives | Evergreen explainers: if I learned it, I teach it |
+| 📖 **What I'm reading** | [Book Whispers](https://github.com/BossDragon1120/Book-Whispers): monthly book reflections, dictated and then summarized | Ideas from books, through my own lens |
 
-The second input is the flywheel: every course I take produces notes, and those notes become a series of videos.
+The learning inputs are the flywheel: every course I take and every book I read produces notes, and those notes become videos.
 
 ## Pipeline
 
@@ -20,7 +21,7 @@ The second input is the flywheel: every course I take produces notes, and those 
  │   (agents)           │  │   ┌──────────┐   ┌────────────┐   ┌──────────────┐   ┌────────────────┐
  └──────────────────────┘  ├─▶ │ talk     │ ▶ │ 9:16 TikTok│ ▶ │ slides + my  │ ▶ │ post, then     │
  ┌──────────────────────┐  │   │ track    │   │ slides     │   │ audio → MP4  │   │ track what     │
- │ 📚 learning-notes    │──┘   │ (skills) │   │ (skills)   │   │ (agent)      │   │ works (agents) │
+ │ 📚📖 learning-notes  │──┘   │ (skills) │   │ (skills)   │   │ (agent)      │   │ works (agents) │
  │   intake (agent)     │      └────┬─────┘   └────────────┘   └──────▲───────┘   └───────┬────────┘
  └──────────────────────┘           └──── 🎙️ I review & record ───────┘                   │
             ▲                                                                              │
@@ -44,6 +45,7 @@ Every format is designed for TikTok before any other platform:
 | **Business** | [**Deal Decoded**](series/deal-decoded.md) | 📰 News | $1B+ M&A announcements explained for people who don't work in finance | Navy + green |
 | **AI** | [**AI Vocab**](series/ai-vocab.md) | 📚 Notes | One AI term per video, in plain language | Golden Gate Bridge photography |
 | **AI · Tech · Business** | [**Course Explainers**](series/course-explainers.md) | 📚 Notes | The key ideas from a course module I just took | Its own style |
+| **Any** | _Book series (name TBD)_ | 📖 Books | One idea from this month's book and what it changed in my thinking | |
 | **Tech** | _coming_ | 📰 / 📚 | _To be defined_ | |
 
 ## Components
@@ -51,7 +53,7 @@ Every format is designed for TikTok before any other platform:
 | Stage | Component | Type | Feeds | Status |
 |---|---|---|---|---|
 | ① Input | [`deal-decoded-scout`](agents/deal-decoded-scout.md) | Agent | Deal Decoded | ✅ Running daily |
-| ① Input | [`learning-notes-intake`](agents/learning-notes-intake.md) | Agent | AI Vocab, Course Explainers | ✅ Built (waiting on notes) |
+| ① Input | [`learning-notes-intake`](agents/learning-notes-intake.md) | Agent | AI Vocab, Course Explainers, Books | ✅ Built (waiting on notes) |
 | ② Script | [`deal-decoded-script`](skills/deal-decoded-script) | Skill | Deal Decoded | ✅ Built |
 | ② Script | `ai-vocab-script` | Skill | AI Vocab | 🛠️ Planned |
 | ② Script | `course-explainer-script` | Skill | Course Explainers | 🛠️ Planned |
