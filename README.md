@@ -7,7 +7,7 @@
 | Input | Where it comes from | What it becomes |
 |---|---|---|
 | 📰 **What's happening** | News and filings, watched by scout agents (e.g. new $1B+ M&A deals) | Timely explainers such as Deal Decoded |
-| 📚 **What I'm learning** | My separate upskilling repo, where I keep notes from courses and deep-learning work | Evergreen explainers: if I learned it, I teach it |
+| 📚 **What I'm learning** | My notes repo, [Upskilling & Subject Matter Expertise](https://github.com/BossDragon1120/Upskilling-and-Subject-Matter-Expertise), with notes from courses and deep dives | Evergreen explainers: if I learned it, I teach it |
 
 The second input is the flywheel: every course I take produces notes, and those notes become a series of videos.
 
@@ -51,7 +51,7 @@ Every format is designed for TikTok before any other platform:
 | Stage | Component | Type | Feeds | Status |
 |---|---|---|---|---|
 | ① Input | [`deal-decoded-scout`](agents/deal-decoded-scout.md) | Agent | Deal Decoded | ✅ Running daily |
-| ① Input | `learning-notes-intake` | Agent | AI Vocab, Course Explainers | 🛠️ Planned |
+| ① Input | [`learning-notes-intake`](agents/learning-notes-intake.md) | Agent | AI Vocab, Course Explainers | ✅ Built (waiting on notes) |
 | ② Script | [`deal-decoded-script`](skills/deal-decoded-script) | Skill | Deal Decoded | ✅ Built |
 | ② Script | `ai-vocab-script` | Skill | AI Vocab | 🛠️ Planned |
 | ② Script | `course-explainer-script` | Skill | Course Explainers | 🛠️ Planned |
@@ -63,7 +63,7 @@ Every format is designed for TikTok before any other platform:
 | ⑤ Publish | `tiktok-poster` | Agent | All | 💡 Idea |
 | ⑤ Learn | `engagement-tracker` | Agent | All, plus inputs | 💡 Idea |
 
-**How `learning-notes-intake` will work:** it watches the upskilling repo for new or updated course notes, picks the ideas that teach well in 60–90 seconds, and hands each one to the matching script skill (a term goes to AI Vocab, a module summary goes to Course Explainers). Notes stay in the upskilling repo, and this repo only reads them.
+**How the notes become videos:** in the notes repo, each `## Teachable moments` bullet and each glossary term in a note marked `status: done` is a candidate video. `learning-notes-intake` picks the best ones, sends each to the matching script skill, and sets the note's `video` field so nothing gets made twice. See the [notes repo README](https://github.com/BossDragon1120/Upskilling-and-Subject-Matter-Expertise#from-notes-to-videos) for the full set of rules.
 
 ## Install
 
