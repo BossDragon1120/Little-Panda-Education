@@ -1,0 +1,9 @@
+{
+  "name": "little-panda-education",
+  "description": "Agents and skills that turn AI and M&A news into short educational videos: scout, script, slides, assemble, publish.",
+  "version": "0.1.0",
+  "author": { "name": "BossDragon1120" },
+  "repository": "https://github.com/BossDragon1120/Little-Panda-Education",
+  "license": "MIT",
+  "keywords": ["education", "tiktok", "m&a", "ai", "content-pipeline", "agents"]
+}
