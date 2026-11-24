@@ -8,7 +8,7 @@
 |---|---|---|
 | 📰 **What's happening** | News and filings, watched by scout agents (e.g. new $1B+ M&A deals) | Timely explainers such as Deal Decoded |
 | 📚 **What I'm learning** | My notes repo, [Upskilling & Subject Matter Expertise](https://github.com/BossDragon1120/Upskilling-and-Subject-Matter-Expertise), with notes from courses and deep dives | Evergreen explainers: if I learned it, I teach it |
-| 📖 **What I'm reading** | [Book Whispers](https://github.com/BossDragon1120/Book-Whispers): monthly book reflections, dictated and then summarized | Ideas from books, through my own lens |
+| 📖🎧 **What I'm reading & hearing** | [Book & Podcast Whispers](https://github.com/BossDragon1120/Book-and-Podcast-Whispers): monthly book reflections and daily M&A Science notes | Ideas from books and practitioners, through my own lens |
 
 The learning inputs are the flywheel: every course I take and every book I read produces notes, and those notes become videos.
 
