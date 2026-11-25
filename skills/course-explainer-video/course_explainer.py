@@ -7,6 +7,7 @@ META, DUR and SCENES (see examples/). Usage:
 
   python3 course_explainer.py examples/agentic-ai-m5-autonomous-agents.py stills 6 18 32
   python3 course_explainer.py examples/agentic-ai-m5-autonomous-agents.py render
+  python3 course_explainer.py examples/<file>.py render --voice s1.mp3 s2.mp3 ...   # one take per scene -> <output>-voiced.mp4
 
 Env: FONT_DIR (default ~/dd-fonts), BG=/path/photo.jpg to swap the generated background for a photo.
 """
@@ -159,6 +160,26 @@ def render_scene(args):
     for i in range(int(round((b - a) * FPS))): p.stdin.write(frame(a + i / FPS).tobytes())
     p.stdin.close(); assert p.wait() == 0, f'scene {si} failed'; return out
 
+VOICE_LEAD = 0.3  # seconds of silence before each clip starts in its scene
+
+def add_voice(video, clips):
+    """Lay one voiceover clip at the start of each scene (in order), level it, and mux into <video>-voiced.mp4."""
+    B = bounds(); assert len(clips) == len(B), f'need {len(B)} clips, one per scene'
+    ins, parts = [], []
+    for i, (c, (a, b)) in enumerate(zip(clips, B)):
+        ins += ['-i', c]; ms = int((a + VOICE_LEAD) * 1000)
+        parts.append(f'[{i + 1}:a]aformat=sample_rates=48000:channel_layouts=mono,adelay={ms}[v{i}]')
+    total = B[-1][1]
+    fc = ';'.join(parts) + ';' + ''.join(f'[v{i}]' for i in range(len(clips))) + f'amix=inputs={len(clips)}:normalize=0,apad,atrim=0:{total},loudnorm=I=-14:TP=-1.5:LRA=11[a]'
+    out = video.replace('.mp4', '-voiced.mp4')
+    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', video] + ins + ['-filter_complex', fc, '-map', '0:v', '-map', '[a]',
+                    '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', out], check=True)
+    for i, (c, (a, b)) in enumerate(zip(clips, B)):
+        dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', c], capture_output=True, text=True).stdout)
+        if VOICE_LEAD + dur > b - a: print(f'warning: clip {i + 1} ({dur:.1f}s) runs past scene {i + 1} ({b - a:.1f}s)')
+    return out
+
+
 if __name__ == '__main__':
     load(sys.argv[1]); mode = sys.argv[2]
     out = os.path.abspath(VIDEO.META.get('output', 'course-explainer.mp4')); outdir = os.path.join(os.path.dirname(out), 'ce_scenes')
@@ -170,3 +191,5 @@ if __name__ == '__main__':
         with ProcessPoolExecutor() as ex: files = list(ex.map(render_scene, [(i, outdir) for i in range(len(VIDEO.SCENES))]))
         lst = f'{outdir}/list.txt'; open(lst, 'w').write(''.join(f"file '{f}'\n" for f in files))
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', out], check=True); print(out)
+        voice = sys.argv[sys.argv.index('--voice') + 1:] if '--voice' in sys.argv else []
+        if voice: print(add_voice(out, voice))
