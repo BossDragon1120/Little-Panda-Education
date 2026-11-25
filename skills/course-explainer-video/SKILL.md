@@ -48,3 +48,4 @@ One idea per scene. Show it, don't list it: each scene needs a moving diagram, n
 - Nothing on screen that isn't in the notes, except clearly illustrative examples, which you flag.
 - Name the course and module on screen (hook and source line).
 - Don't commit rendered MP4s to this repo.
+- Save each video's final voiceover transcript and TikTok caption next to its scene file as `examples/<file>.md`.
