@@ -42,7 +42,7 @@ Every format is designed for TikTok before any other platform:
 
 | Subject | Series | Input | What it is | Look |
 |---|---|---|---|---|
-| **Business** | [**Deal Decoded**](series/deal-decoded.md) | 📰 News | $1B+ M&A announcements explained for people who don't work in finance | Navy + green |
+| **Business** | [**Deal Decoded**](series/deal-decoded.md) | 📰 News | $1B+ M&A announcements explained for people who don't work in finance | Navy + lime |
 | **AI** | [**AI Vocab**](series/ai-vocab.md) | 📚 Notes | One AI term per video, in plain language | Golden Gate Bridge photography |
 | **AI · Tech · Business** | [**Course Explainers**](series/course-explainers.md) | 📚 Notes | The key ideas from a course module I just took | Its own style |
 | **Any** | _Book series (name TBD)_ | 📖 Books | One idea from this month's book and what it changed in my thinking | |
@@ -58,7 +58,7 @@ Every format is designed for TikTok before any other platform:
 | ② Script | `ai-vocab-script` | Skill | AI Vocab | 🛠️ Planned |
 | ② Script | `course-explainer-script` | Skill | Course Explainers | 🛠️ Planned |
 | ③ Slides | `tiktok-format` | Skill (shared) | All slide builders | 🛠️ Planned |
-| ③ Slides | `deal-decoded-slides` | Skill | Deal Decoded | 🛠️ Planned |
+| ③ Slides + ④ Video | [`deal-decoded-video`](skills/deal-decoded-video) | Skill | Deal Decoded | ✅ Built (silent video; voiceover added by me) |
 | ③ Slides | `ai-vocab-slides` | Skill | AI Vocab | 🛠️ Planned |
 | ③ Slides | `course-explainer-slides` | Skill | Course Explainers | 🛠️ Planned |
 | ④ Assemble | `video-assembler` | Agent | All | 🛠️ Planned |
