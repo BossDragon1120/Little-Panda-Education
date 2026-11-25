@@ -8,8 +8,9 @@ META = {
     'series': 'COURSE EXPLAINER',
     'course_tag': 'AGENTIC AI \u00b7 M5',
     'output': 'agentic-ai-m5-autonomous-agents.mp4',
+    'voice_trim': [1.55, 0, 0, 0, 0, 0, 0],   # the hook take had 1.7 s of silence before the first word
 }
-DUR = [10, 13.6, 12.8, 12.8, 15.8, 22.6, 27.2]   # fitted to Dana's voiceover takes (one clip per scene, starting 0.3 s in)
+DUR = [8.5, 13.6, 12.8, 12.8, 15.8, 22.6, 27.2]   # fitted to Dana's voiceover takes (one clip per scene, starting 0.3 s in)
 
 def s_hook(d, t):
     rise(d, t, 0.0, (X0, 440), 'MODULE 5 \u00b7 PATTERNS FOR AUTONOMOUS AGENTS', fit(lambda z: M(z, 800), 'MODULE 5 \u00b7 PATTERNS FOR AUTONOMOUS AGENTS', X1 - X0, 28), ACC, dist=12)

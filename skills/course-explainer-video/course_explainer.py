@@ -167,8 +167,9 @@ def add_voice(video, clips):
     B = bounds(); assert len(clips) == len(B), f'need {len(B)} clips, one per scene'
     ins, parts = [], []
     for i, (c, (a, b)) in enumerate(zip(clips, B)):
+        trim = VIDEO.META.get('voice_trim', [0] * len(clips))[i]  # seconds of dead air to cut from the start of this take
         ins += ['-i', c]; ms = int((a + VOICE_LEAD) * 1000)
-        parts.append(f'[{i + 1}:a]aformat=sample_rates=48000:channel_layouts=mono,adelay={ms}[v{i}]')
+        parts.append(f'[{i + 1}:a]atrim=start={trim},asetpts=PTS-STARTPTS,aformat=sample_rates=48000:channel_layouts=mono,adelay={ms}[v{i}]')
     total = B[-1][1]
     fc = ';'.join(parts) + ';' + ''.join(f'[v{i}]' for i in range(len(clips))) + f'amix=inputs={len(clips)}:normalize=0,apad,atrim=0:{total},loudnorm=I=-14:TP=-1.5:LRA=11[a]'
     out = video.replace('.mp4', '-voiced.mp4')
@@ -176,6 +177,7 @@ def add_voice(video, clips):
                     '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', out], check=True)
     for i, (c, (a, b)) in enumerate(zip(clips, B)):
         dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', c], capture_output=True, text=True).stdout)
+        dur -= VIDEO.META.get('voice_trim', [0] * len(clips))[i]
         if VOICE_LEAD + dur > b - a: print(f'warning: clip {i + 1} ({dur:.1f}s) runs past scene {i + 1} ({b - a:.1f}s)')
     return out
 
