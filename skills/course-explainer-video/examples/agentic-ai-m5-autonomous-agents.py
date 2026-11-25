@@ -9,7 +9,7 @@ META = {
     'course_tag': 'AGENTIC AI \u00b7 M5',
     'output': 'agentic-ai-m5-autonomous-agents.mp4',
 }
-DUR = [10, 13.6, 12.8, 12.8, 15.8, 22.6, 11]   # fitted to Dana's voiceover takes (one clip per scene, starting 0.3 s in)
+DUR = [10, 13.6, 12.8, 12.8, 15.8, 22.6, 27.2]   # fitted to Dana's voiceover takes (one clip per scene, starting 0.3 s in)
 
 def s_hook(d, t):
     rise(d, t, 0.0, (X0, 440), 'MODULE 5 \u00b7 PATTERNS FOR AUTONOMOUS AGENTS', fit(lambda z: M(z, 800), 'MODULE 5 \u00b7 PATTERNS FOR AUTONOMOUS AGENTS', X1 - X0, 28), ACC, dist=12)
@@ -162,22 +162,24 @@ SHEET = [('PLAN', 'Agent writes the steps. Less control, more range.'),
          ('CODE', 'Huge function libraries. Always use a sandbox.'),
          ('TEAM', 'Split work into roles. Build one subtask at a time.'),
          ('TALK', 'Linear · Hierarchy · All-to-all')]
+SHEET_CUES = [2.6, 7.0, 10.4, 13.0, 16.4, 20.7]   # when each row is spoken in the sum-up take (last = end of rows)
 def s_sheet(d, t):
-    label(d, t, 'CHEAT SHEET')
-    if t > 0.6: chip(d, X1 - 240, 424, 'SCREENSHOT THIS', ACC, 1, solid=int(t * 2) % 2 == 0)
+    label(d, t, 'SUM IT UP')
     title(d, t, 'AUTONOMOUS AGENT PATTERNS', size=74)
     y = 600
     for i, (k, v) in enumerate(SHEET):
         a = prog(t, 0.7 + i * 0.25)
-        box(d, (X0, y, X1, y + 112), a)
+        act = SHEET_CUES[i] <= t < SHEET_CUES[i + 1]; done = t >= SHEET_CUES[i + 1]
+        box(d, (X0, y, X1, y + 112), a, fill=(242, 241, 255) if act else CARD, outline=ACC if act else LINE, width=4 if act else 3)
         T(d, (X0 + 24, y + 56), k, M(26, 800), ACC, a, 'lm')
-        ls = wrap(v, S(32, 600), X1 - X0 - 220)
-        for j, ln in enumerate(ls[:2]): T(d, (X0 + 190, y + 56 + (j - (len(ls[:2]) - 1) / 2) * 40), ln, S(32, 600), INK, a, 'lm')
+        ls = wrap(v, S(32, 600), X1 - X0 - 270)
+        col = INK if (act or done or t < SHEET_CUES[0]) else DIM
+        for j, ln in enumerate(ls[:2]): T(d, (X0 + 190, y + 56 + (j - (len(ls[:2]) - 1) / 2) * 40), ln, S(32, 600), col, a, 'lm')
+        if done: check(d, X1 - 50, y + 56, GOOD, prog(t, SHEET_CUES[i + 1], 0.3), 0.7)
         y += 126
-    a = prog(t, 3.0)
+    a = prog(t, 20.7)
     T(d, (X0, 1250 + (1 - a) * 20), 'THAT\u2019S ALL 5 MODULES.', D(64), INK, a)
     T(d, (X0, 1322 + (1 - a) * 20), 'FOLLOW FOR MORE.', D(64), ACC, a)
     T(d, (X0, 1404), 'Source: my notes, Agentic AI Module 5 (DeepLearning.AI)', S(20, 500), DIM, prog(t, 2.0))
-
 
 SCENES = [s_hook, s_plan, s_format, s_code, s_team, s_patterns, s_sheet]
