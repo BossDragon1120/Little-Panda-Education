@@ -43,8 +43,8 @@ Every format is designed for TikTok before any other platform:
 | Subject | Series | Input | What it is | Look |
 |---|---|---|---|---|
 | **Business** | [**Deal Decoded**](series/deal-decoded.md) | 📰 News | $1B+ M&A announcements explained for people who don't work in finance | Navy + lime |
-| **AI** | [**AI Vocab**](series/ai-vocab.md) | 📚 Notes | One AI term per video, in plain language | Golden Gate Bridge photography |
-| **AI · Tech · Business** | [**Course Explainers**](series/course-explainers.md) | 📚 Notes | The key ideas from a course module I just took | Its own style |
+| **AI** | [**AI Vocab**](series/ai-vocab.md) | 📚 Notes | One AI term per video, in plain language | Frosted panel over a photo (first 10 used Golden Gate Bridge photos) |
+| **AI · Tech · Business** | [**Course Explainers**](series/course-explainers.md) | 📚 Notes | The key ideas from a course module I just took | My photo behind a frosted text panel |
 | **Any** | _Book series (name TBD)_ | 📖 Books | One idea from this month's book and what it changed in my thinking | |
 | **Tech** | _coming_ | 📰 / 📚 | _To be defined_ | |
 
@@ -95,6 +95,7 @@ scripts/validate.py   checks every skill and agent's frontmatter (runs in CI)
 - **TikTok first.** Vertical, hook up front, readable with the sound off.
 - **Teach what I learn.** My course notes become videos, so learning and making content reinforce each other.
 - **Primary sources only.** Figures come from filings and press releases. If a number wasn't disclosed, it isn't shown.
+- **No panda on slides.** The name stays; the mascot doesn't appear on screen in any series.
 - **One format per series, kept in a skill**, so each series stays consistent and is easy to change in one place.
 
 ## About
