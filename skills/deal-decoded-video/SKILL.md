@@ -41,7 +41,7 @@ Change lengths with `durations` (seven values) and keep the script's timestamps 
    - `ticker_items`: 4–6 facts from the deal card.
    - `hook.value` and `decimals`: the headline value. `tags`: 2–3 short structure facts.
    - `buyer` / `target`: `verb` + `what` form the second headline (`what` is lime); `sub` is an optional lime line. `visual` is `tiles` (3 or 6 items with `label`, `icon`, optional `alert: true` to flash red during the callout) or `flow` (people → `hub` → up to 4 `right` boxes, optional `blocked_label`). Add either a `callout` or a `stat`, not both.
-   - Icons: laptop, server, phone, cloud, identity/person, data/database, factory, pill, lab, car, chart, globe, store, gear, money/bank, chip. Anything else draws its first letter in a box.
+   - Icons: laptop, server, phone, cloud, identity/person, data/database, factory, pill, lab, car, chart, globe, store, gear, money/bank, chip, lift (scissor lift), boom. Anything else draws its first letter in a box.
    - `hypothesis.cards`: three cards at 0.6 / 6.5 / 12.0 s, body about 110 characters or less.
    - `you`: two title lines, a 1–3 letter `token`, three `nodes` (the last one `final: true`), optional `threat`.
    - `watching.rows`: two rows (`pill` such as PENDING, `risk: true` for a red title), `big`: two punchy lines, `foot`: a small footnote.

@@ -1,0 +1,223 @@
+{
+  "output": "deal-decoded-linamar-genie.mp4",
+  "palette": "navy",
+  "episode": "#002",
+  "tickers": "LINAMAR / GENIE",
+  "ticker_items": [
+    "LINAMAR > GENIE",
+    "~$1.4B ALL CASH",
+    "SELLER: TEREX",
+    "~5.5X ADJ. EBITDA INCL. SYNERGIES",
+    "~$135M SYNERGY TARGET",
+    "EXPECTED CLOSE 1H 2027"
+  ],
+  "durations": [
+    7,
+    13,
+    10,
+    20,
+    10,
+    10,
+    16
+  ],
+  "scenes": {
+    "hook": {
+      "kicker": "BREAKING · NOV 23, 2026",
+      "buyer": "LINAMAR",
+      "verb": "IS BUYING",
+      "target": "GENIE",
+      "value": 1.4,
+      "value_prefix": "$",
+      "value_suffix": "B",
+      "decimals": 1,
+      "tags": [
+        "ALL CASH",
+        "FROM TEREX",
+        "~5.5X EBITDA"
+      ],
+      "line": "Seen a worker ride a lift up at a job site? It might have said Genie."
+    },
+    "buyer": {
+      "label": "01 / THE BUYER",
+      "name": "LINAMAR",
+      "verb": "CANADIAN",
+      "what": "MANUFACTURER",
+      "sub": "36,000+ EMPLOYEES  ·  ALREADY OWNS SKYJACK",
+      "visual": {
+        "type": "tiles",
+        "items": [
+          {
+            "label": "FACTORIES",
+            "icon": "factory"
+          },
+          {
+            "label": "SKYJACK LIFTS",
+            "icon": "lift"
+          },
+          {
+            "label": "36,000+ PEOPLE",
+            "icon": "person"
+          }
+        ]
+      },
+      "line": "A sports owner that already has a team in the league: Skyjack, another lift brand.",
+      "stat": {
+        "at": 5.0,
+        "big": "C$10.2B",
+        "l1": "Linamar 2025 sales",
+        "l2": "in Canadian dollars"
+      }
+    },
+    "target": {
+      "label": "02 / THE TARGET",
+      "name": "GENIE",
+      "verb": "MAKES",
+      "what": "AERIAL LIFTS",
+      "sub": "PARENT TEREX IS SELLING IT",
+      "visual": {
+        "type": "tiles",
+        "items": [
+          {
+            "label": "SCISSOR LIFTS",
+            "icon": "lift"
+          },
+          {
+            "label": "BOOM LIFTS",
+            "icon": "boom"
+          },
+          {
+            "label": "PARTS + REPAIR",
+            "icon": "gear"
+          }
+        ]
+      },
+      "line": "The rival team: lifts, parts and repair, now being sold off by Terex.",
+      "stat": {
+        "at": 5.0,
+        "big": "~$2.3B",
+        "l1": "Genie yearly revenue",
+        "l2": "4,200+ employees"
+      }
+    },
+    "hypothesis": {
+      "title": "WHY 1 + 1 > 2",
+      "cards": [
+        {
+          "at": 0.6,
+          "head": "TWO TEAMS, ONE OWNER",
+          "body": "Genie and Skyjack form the Linamar Access Group, but keep separate sales teams."
+        },
+        {
+          "at": 6.5,
+          "head": "SAVINGS BEHIND THE SCENES",
+          "body": "Buying steel and parts together, sharing factories, a bigger repair business."
+        },
+        {
+          "at": 12.0,
+          "head": "$135M A YEAR",
+          "body": "Linamar's synergy target, phased in over about three years."
+        }
+      ]
+    },
+    "you": {
+      "title": [
+        "WHO WORKS",
+        "UP THERE?"
+      ],
+      "token": "UP",
+      "nodes": [
+        {
+          "title": "CONCERT LIGHTS",
+          "tag": "STAGE CREW"
+        },
+        {
+          "title": "WAREHOUSE CEILING",
+          "tag": "PAINTER"
+        },
+        {
+          "title": "THIRD-STORY WINDOW",
+          "tag": "INSTALLER",
+          "final": true
+        }
+      ],
+      "line": "Lots of that work happens on lifts like these."
+    },
+    "watching": {
+      "rows": [
+        {
+          "title": "REGULATORS",
+          "pill": "PENDING",
+          "body": "Regulators still have to sign off. Expected close: first half of 2027."
+        },
+        {
+          "title": "CARVE-OUT RISK",
+          "risk": true,
+          "body": "Genie has to unplug from Terex's systems without slowing a single factory."
+        }
+      ],
+      "big": [
+        "CARVE-OUTS",
+        "ARE MESSY."
+      ],
+      "foot": "SELLER: TEREX  //  UNIT: AERIALS SEGMENT (GENIE)"
+    },
+    "card": {
+      "header": "LINAMAR  >  GENIE",
+      "rows": [
+        [
+          "VALUE",
+          [
+            "~$1.4B USD · all cash",
+            "Funded by a new credit facility"
+          ]
+        ],
+        [
+          "TERMS",
+          [
+            "~5.5x Genie TTM adj. EBITDA",
+            "including expected synergies"
+          ]
+        ],
+        [
+          "AFTER",
+          [
+            "Genie + Skyjack = Linamar Access Group"
+          ]
+        ],
+        [
+          "SYNERGIES",
+          [
+            "~$135M/yr run-rate (~36 mo)",
+            "Accretive to normalized EPS"
+          ]
+        ],
+        [
+          "SCALE",
+          [
+            "Genie ~$2.3B LTM revenue",
+            "4,200+ employees"
+          ]
+        ],
+        [
+          "LEADERSHIP",
+          [
+            "CEO Jim Jarrell · Chair Linda Hasenfratz"
+          ]
+        ],
+        [
+          "LEVERAGE",
+          [
+            "~1.6x net debt / EBITDA at close"
+          ]
+        ],
+        [
+          "CLOSE",
+          [
+            "1H 2027 · needs regulators"
+          ]
+        ]
+      ],
+      "caveat": "Synergy and accretion targets are company projections. Sources: Linamar release, Terex 8-K, Nov 23 2026."
+    }
+  }
+}
