@@ -43,8 +43,8 @@ Every format is designed for TikTok before any other platform:
 | Subject | Series | Input | What it is | Look |
 |---|---|---|---|---|
 | **Business** | [**Deal Decoded**](series/deal-decoded.md) | 📰 News | $1B+ M&A announcements explained for people who don't work in finance | Navy + lime |
-| **AI** | [**AI Vocab**](series/ai-vocab.md) | 📚 Notes | One AI term per video, in plain language | Frosted panel over a photo (first 10 used Golden Gate Bridge photos) |
-| **AI · Tech · Business** | [**Course Explainers**](series/course-explainers.md) | 📚 Notes | The key ideas from a course module I just took | My photo behind a frosted text panel |
+| **AI** | [**AI Vocab**](series/ai-vocab.md) | 📚 Notes | One AI term per video, in plain language | Same look as Course Explainers (first 10 used Golden Gate Bridge photos) |
+| **AI · Tech · Business** | [**Course Explainers**](series/course-explainers.md) | 📚 Notes | The key ideas from a course module I just took | Frosted text panel over a dusk gradient, one animated diagram per idea |
 | **Any** | _Book series (name TBD)_ | 📖 Books | One idea from this month's book and what it changed in my thinking | |
 | **Tech** | _coming_ | 📰 / 📚 | _To be defined_ | |
 
@@ -60,7 +60,7 @@ Every format is designed for TikTok before any other platform:
 | ③ Slides | `tiktok-format` | Skill (shared) | All slide builders | 🛠️ Planned |
 | ③ Slides + ④ Video | [`deal-decoded-video`](skills/deal-decoded-video) | Skill | Deal Decoded | ✅ Built (silent video; voiceover added by me) |
 | ③ Slides | `ai-vocab-slides` | Skill | AI Vocab | 🛠️ Planned |
-| ③ Slides | `course-explainer-slides` | Skill | Course Explainers | 🛠️ Planned |
+| ③ Slides + ④ Video | [`course-explainer-video`](skills/course-explainer-video) | Skill | Course Explainers, AI Vocab | ✅ Built (silent video; voiceover added by me) |
 | ④ Assemble | `video-assembler` | Agent | All | 🛠️ Planned |
 | ⑤ Publish | `tiktok-poster` | Agent | All | 💡 Idea |
 | ⑤ Learn | `engagement-tracker` | Agent | All, plus inputs | 💡 Idea |
