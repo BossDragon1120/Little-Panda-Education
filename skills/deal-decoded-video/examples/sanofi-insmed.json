@@ -1,7 +1,7 @@
 {
   "output": "deal-decoded-sanofi-insmed.mp4",
   "palette": "navy",
-  "episode": "#002",
+  "episode": "#003",
   "tickers": "SANOFI / INSM",
   "ticker_items": [
     "SANOFI > INSMED",

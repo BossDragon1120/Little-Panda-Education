@@ -107,6 +107,17 @@ def icon(d, kind, cx, cy, col):
         d.rectangle((cx-28, cy-28, cx+28, cy+28), outline=col, width=4)
         for i in range(-2, 3):
             d.line((cx+i*10, cy-40, cx+i*10, cy-28), fill=col, width=3); d.line((cx+i*10, cy+28, cx+i*10, cy+40), fill=col, width=3)
+    elif k in ('lift', 'scissor-lift'):
+        d.rectangle((cx-48, cy-34, cx+48, cy-24), outline=col, width=4)
+        d.line((cx-48, cy-34, cx-48, cy-46), fill=col, width=3); d.line((cx+48, cy-34, cx+48, cy-46), fill=col, width=3); d.line((cx-48, cy-46, cx+48, cy-46), fill=col, width=3)
+        d.line((cx-34, cy-24, cx+34, cy+12), fill=col, width=4); d.line((cx+34, cy-24, cx-34, cy+12), fill=col, width=4)
+        d.rectangle((cx-48, cy+12, cx+48, cy+24), outline=col, width=4)
+        d.ellipse((cx-42, cy+22, cx-26, cy+38), outline=col, width=4); d.ellipse((cx+26, cy+22, cx+42, cy+38), outline=col, width=4)
+    elif k in ('boom', 'boom-lift'):
+        d.rectangle((cx-46, cy+12, cx+10, cy+26), outline=col, width=4)
+        d.ellipse((cx-42, cy+24, cx-28, cy+38), outline=col, width=4); d.ellipse((cx-8, cy+24, cx+6, cy+38), outline=col, width=4)
+        d.line((cx-20, cy+12, cx+30, cy-30), fill=col, width=5)
+        d.rectangle((cx+24, cy-46, cx+50, cy-30), outline=col, width=4)
     else:  # fallback: initial in a box
         d.rectangle((cx-36, cy-36, cx+36, cy+36), outline=col, width=4); d.text((cx, cy), kind[:1].upper(), font=D(48), fill=col, anchor='mm')
 
@@ -355,7 +366,9 @@ def s_card(img, d, t, c):
         T(d, (X0 + 30, y + 6), k, fit(M, k, 200, 22), P['ACC'], prog(t, s), bg=fc)
         for j, v in enumerate(vals): T(d, (vx, y + j * lh), v, fit(lambda z: S(z, 600), v, vw, vs), P['FG'], prog(t, s), bg=fc)
         y += len(vals) * lh + gap
-    T(d, (X0 + 30, y + 4), c.get('caveat', ''), fit(lambda z: S(z, 500), c.get('caveat', ''), X1 - X0 - 60, 21), P['DIM'], prog(t, 2.0), bg=fc)
+    cf = S(21, 500)
+    for j, ln in enumerate(wrap(c.get('caveat', ''), cf, X1 - X0 - 60)[:2]):
+        T(d, (X0 + 30, y + 4 + j * 27), ln, cf, P['DIM'], prog(t, 2.0), bg=fc)
     a = prog(t, 6.0)
     if a > 0:
         cta = c.get('cta', ['FOLLOW FOR THE NEXT DEAL,', 'DECODED.'])
