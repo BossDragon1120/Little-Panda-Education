@@ -61,6 +61,7 @@ Every format is designed for TikTok before any other platform:
 | ③ Slides + ④ Video | [`deal-decoded-video`](skills/deal-decoded-video) | Skill | Deal Decoded | ✅ Built (silent video; voiceover added by me) |
 | ③ Slides | `ai-vocab-slides` | Skill | AI Vocab | 🛠️ Planned |
 | ③ Slides + ④ Video | [`course-explainer-video`](skills/course-explainer-video) | Skill | Course Explainers, AI Vocab | ✅ Built (silent video; voiceover added by me) |
+| ③ Slides | [`animated-infographic`](skills/animated-infographic) | Skill | AI Vocab, Tech | ✅ Built (one looping infographic + caption and hashtags; no voiceover) |
 | ④ Assemble | `video-assembler` | Agent | All | 🛠️ Planned |
 | ⑤ Publish | `tiktok-poster` | Agent | All | 💡 Idea |
 | ⑤ Learn | `engagement-tracker` | Agent | All, plus inputs | 💡 Idea |
