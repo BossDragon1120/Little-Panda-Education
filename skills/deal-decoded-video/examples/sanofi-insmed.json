@@ -1,0 +1,218 @@
+{
+  "output": "deal-decoded-sanofi-insmed.mp4",
+  "palette": "navy",
+  "episode": "#002",
+  "tickers": "SANOFI / INSM",
+  "ticker_items": [
+    "SANOFI > INSMED",
+    "~$41B ALL CASH",
+    "$175 PER INSM SHARE",
+    "~46% PREMIUM",
+    "EXPECTED CLOSE 1H 2027"
+  ],
+  "durations": [
+    7,
+    13,
+    10,
+    20,
+    10,
+    10,
+    16
+  ],
+  "scenes": {
+    "hook": {
+      "kicker": "BREAKING · NOV 24, 2026",
+      "buyer": "SANOFI",
+      "verb": "IS BUYING",
+      "target": "INSMED",
+      "value": 41.0,
+      "value_prefix": "$",
+      "value_suffix": "B",
+      "decimals": 0,
+      "tags": [
+        "ALL CASH",
+        "$175 / SHARE",
+        "~46% PREMIUM"
+      ],
+      "line": "It's a giant bet on your lungs."
+    },
+    "buyer": {
+      "label": "01 / THE BUYER",
+      "name": "SANOFI",
+      "verb": "FRENCH",
+      "what": "DRUG GIANT",
+      "sub": "BESTSELLER: DUPIXENT",
+      "visual": {
+        "type": "tiles",
+        "items": [
+          {
+            "label": "DUPIXENT",
+            "icon": "pill",
+            "alert": true
+          },
+          {
+            "label": "ECZEMA",
+            "icon": "person"
+          },
+          {
+            "label": "ASTHMA + COPD",
+            "icon": "lab"
+          }
+        ]
+      },
+      "line": "A restaurant chain whose bestselling dish is the eczema and asthma drug from all those ads.",
+      "callout": {
+        "at": 7.4,
+        "kicker": "MARCH 2031",
+        "text": [
+          "Dupixent's key US patent expires.",
+          "Then copies can compete."
+        ]
+      }
+    },
+    "target": {
+      "label": "02 / THE TARGET",
+      "name": "INSMED",
+      "verb": "MAKES",
+      "what": "LUNG DRUGS",
+      "visual": {
+        "type": "tiles",
+        "items": [
+          {
+            "label": "BRINSUPRI",
+            "icon": "pill"
+          },
+          {
+            "label": "ARIKAYCE",
+            "icon": "pill"
+          },
+          {
+            "label": "TPIP (PHASE 3)",
+            "icon": "lab"
+          }
+        ]
+      },
+      "line": "The food truck with a line around the block: a daily pill for a chronic lung disease.",
+      "stat": {
+        "at": 5.0,
+        "big": "$1.09B",
+        "l1": "Brinsupri revenue",
+        "l2": "since its Aug 2025 launch"
+      }
+    },
+    "hypothesis": {
+      "title": "WHY 1 + 1 > 2",
+      "cards": [
+        {
+          "at": 0.6,
+          "head": "THE NEXT BESTSELLER",
+          "body": "Buy the next hit dish before the old one fades."
+        },
+        {
+          "at": 6.5,
+          "head": "IT KNOWS THE LUNG DOCTORS",
+          "body": "Dupixent already sells for asthma and COPD, so Sanofi can take Brinsupri to more countries, faster."
+        },
+        {
+          "at": 12.0,
+          "head": "A DEEPER PIPELINE",
+          "body": "A second approved lung drug, plus a third in late-stage trials."
+        }
+      ]
+    },
+    "you": {
+      "title": [
+        "A COUGH THAT",
+        "NEVER GOES AWAY"
+      ],
+      "token": "RX",
+      "nodes": [
+        {
+          "title": "THE COUGH",
+          "tag": "EVERY MORNING"
+        },
+        {
+          "title": "THE DIAGNOSIS",
+          "tag": "BRONCHIECTASIS"
+        },
+        {
+          "title": "A DAILY PILL",
+          "tag": "BRINSUPRI",
+          "final": true
+        }
+      ],
+      "line": "Mucus every morning, antibiotics every few months. That's who this drug is for."
+    },
+    "watching": {
+      "rows": [
+        {
+          "title": "APPROVALS",
+          "pill": "PENDING",
+          "body": "Insmed shareholders and regulators still have to sign off."
+        },
+        {
+          "title": "LAUNCH MOMENTUM",
+          "risk": true,
+          "body": "Reshuffle sales teams mid-launch and growth can stall."
+        }
+      ],
+      "big": [
+        "DON'T STALL",
+        "THE LAUNCH."
+      ],
+      "foot": "BRINSUPRI US LAUNCH  //  AUG 2025"
+    },
+    "card": {
+      "header": "SANOFI  >  INSMED",
+      "rows": [
+        [
+          "VALUE",
+          [
+            "~$41.0B equity value (~EUR 37.6B)",
+            "All cash"
+          ]
+        ],
+        [
+          "TERMS",
+          [
+            "$175 per INSM share",
+            "~46% premium (to Nov 18 close)"
+          ]
+        ],
+        [
+          "OWNERSHIP",
+          [
+            "Insmed becomes part of Sanofi"
+          ]
+        ],
+        [
+          "TARGET",
+          [
+            "Accretive to business EPS by end-2028"
+          ]
+        ],
+        [
+          "SCALE",
+          [
+            "Brinsupri $1.09B since Aug 2025",
+            "Arikayce $433.8M in 2025"
+          ]
+        ],
+        [
+          "CLOSE",
+          [
+            "1H 2027",
+            "Needs INSM vote + regulators"
+          ]
+        ],
+        [
+          "FINANCING",
+          [
+            "Debt + cash on hand"
+          ]
+        ]
+      ],
+      "caveat": "Accretion target is a company projection. Sources: Sanofi 6-K, Insmed 8-K, Nov 24 2026."
+    }
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "output": "deal-decoded-crwd-zs.mp4",
+  "palette": "navy",
+  "episode": "#001",
+  "tickers": "CRWD / ZS",
+  "ticker_items": [
+    "CRWD > ZS",
+    "~$43.9B ALL-STOCK",
+    "1.135 CRWD PER ZS SHARE",
+    "~34% PREMIUM",
+    "~$1B REVENUE SYNERGY TARGET",
+    "EXPECTED CLOSE 2H OF CRWD FISCAL 2028"
+  ],
+  "durations": [
+    7,
+    13,
+    10,
+    20,
+    10,
+    10,
+    16
+  ],
+  "scenes": {
+    "hook": {
+      "kicker": "BREAKING · NOV 23, 2026",
+      "buyer": "CROWDSTRIKE",
+      "verb": "IS BUYING",
+      "target": "ZSCALER",
+      "value": 43.9,
+      "value_prefix": "$",
+      "value_suffix": "B",
+      "decimals": 1,
+      "tags": [
+        "ALL STOCK",
+        "~34% PREMIUM",
+        "ENTERPRISE VALUE"
+      ],
+      "line": "Both are probably already on your work laptop."
+    },
+    "buyer": {
+      "label": "01 / THE BUYER",
+      "name": "CROWDSTRIKE",
+      "verb": "PROTECTS",
+      "what": "DEVICES",
+      "sub": "+ CLOUD  ·  IDENTITY  ·  DATA",
+      "visual": {
+        "type": "tiles",
+        "items": [
+          {
+            "label": "LAPTOP",
+            "icon": "laptop",
+            "alert": true
+          },
+          {
+            "label": "SERVER",
+            "icon": "server",
+            "alert": true
+          },
+          {
+            "label": "PHONE",
+            "icon": "phone"
+          },
+          {
+            "label": "CLOUD",
+            "icon": "cloud"
+          },
+          {
+            "label": "IDENTITY",
+            "icon": "identity"
+          },
+          {
+            "label": "DATA",
+            "icon": "data"
+          }
+        ]
+      },
+      "line": "A security guard living inside every device, cloud server and login.",
+      "callout": {
+        "at": 7.4,
+        "kicker": "JULY 2024",
+        "text": [
+          "One bad update crashed ~8.5M Windows devices.",
+          "Flights grounded worldwide."
+        ]
+      }
+    },
+    "target": {
+      "label": "02 / THE TARGET",
+      "name": "ZSCALER",
+      "verb": "PROTECTS",
+      "what": "CONNECTIONS",
+      "visual": {
+        "type": "flow",
+        "right": [
+          "EMAIL",
+          "CRM",
+          "WEB",
+          "AI APP"
+        ],
+        "hub": "Z",
+        "hub_label": "CHECKPOINT",
+        "blocked_label": "BLOCKED"
+      },
+      "line": "Your work traffic passes its cloud checkpoint first.",
+      "stat": {
+        "at": 5.0,
+        "big": "~50%",
+        "l1": "of the Fortune 500",
+        "l2": "protected by Zscaler"
+      }
+    },
+    "hypothesis": {
+      "title": "WHY 1 + 1 > 2",
+      "cards": [
+        {
+          "at": 0.6,
+          "head": "SEE THE WHOLE ATTACK",
+          "body": "The guard sees inside the room. The checkpoint sees where everyone goes."
+        },
+        {
+          "at": 6.5,
+          "head": "8,000 NEW DOORS",
+          "body": "~8,000 Zscaler customers don't use CrowdStrike yet."
+        },
+        {
+          "at": 12.0,
+          "head": "THE AI BET",
+          "body": "When AI agents work for us, something has to check every move they make."
+        }
+      ]
+    },
+    "you": {
+      "title": [
+        "YOUR AI ASSISTANT",
+        "BOOKS YOUR TRIP"
+      ],
+      "token": "AI",
+      "nodes": [
+        {
+          "title": "YOUR LAPTOP",
+          "tag": "CROWDSTRIKE"
+        },
+        {
+          "title": "THE NETWORK",
+          "tag": "ZSCALER"
+        },
+        {
+          "title": "THE WEBSITE",
+          "tag": "BOOKED",
+          "final": true
+        }
+      ],
+      "threat": "FAKE LINK",
+      "line": "Nobody gets to trick it, from your laptop all the way to the website."
+    },
+    "watching": {
+      "rows": [
+        {
+          "title": "REGULATORS",
+          "pill": "PENDING",
+          "body": "Zscaler shareholders and regulators still have to sign off."
+        },
+        {
+          "title": "CONCENTRATION RISK",
+          "risk": true,
+          "body": "More of the world's security in one company's hands."
+        }
+      ],
+      "big": [
+        "ONE BAD",
+        "UPDATE."
+      ],
+      "foot": "JULY 2024  //  ~8.5M DEVICES DOWN"
+    },
+    "card": {
+      "header": "CROWDSTRIKE  >  ZSCALER",
+      "rows": [
+        [
+          "VALUE",
+          [
+            "~$43.9B · all stock"
+          ]
+        ],
+        [
+          "TERMS",
+          [
+            "1.135 CRWD per ZS share",
+            "~34% premium"
+          ]
+        ],
+        [
+          "OWNERSHIP",
+          [
+            "CRWD holders ~84% · ZS ~16%"
+          ]
+        ],
+        [
+          "OVERLAP",
+          [
+            "2,000+ shared customers",
+            "~8,000 Zscaler-only"
+          ]
+        ],
+        [
+          "SYNERGIES",
+          [
+            "~$1B revenue (30 mo)",
+            "~$500M cost (18-24 mo)"
+          ]
+        ],
+        [
+          "SCALE",
+          [
+            ">$10B combined ARR"
+          ]
+        ],
+        [
+          "LEADERSHIP",
+          [
+            "Jay Chaudhry runs Zscaler,",
+            "joins CRWD board"
+          ]
+        ],
+        [
+          "CLOSE",
+          [
+            "2H CRWD FY28 (~Aug 2027-Jan 2028)",
+            "Needs ZS vote + regulators"
+          ]
+        ]
+      ],
+      "caveat": "Synergy targets are company projections. Source: CRWD 8-K, Nov 23 2026."
+    }
+  }
+}
