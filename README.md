@@ -85,6 +85,7 @@ Every format is designed for TikTok before any other platform:
 agents/            stages that run on their own (scouts, notes intake, assembler, poster, tracker)
 skills/            house formats (scripts and slides for each series)
 series/            premise, look and status for each series
+episodes/          finished scripts, one per episode: episodes/<series>/YYYY-MM-DD-NNN-<slug>.md
 templates/         starting points for new skills and agents
 .claude-plugin/    plugin and marketplace manifests
 scripts/validate.py   checks every skill and agent's frontmatter (runs in CI)
