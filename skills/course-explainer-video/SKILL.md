@@ -1,11 +1,11 @@
 ---
 name: course-explainer-video
-description: Use when turning course or learning notes into a Course Explainer (or AI Vocab) TikTok. Renders a 60-90 second, 1080x1920, silent MP4 in the house frosted-panel look, with animated diagrams, timed for the creator's voiceover.
+description: Use when turning course or learning notes into a Course Explainer TikTok. Renders a 60-90 second, 1080x1920, silent MP4 in the house frosted-panel look, with animated diagrams, timed for the creator's voiceover.
 ---
 
 # Course Explainer: video renderer
 
-The go-forward standard for Little Panda Education explainers made from notes (Course Explainers, and AI Vocab until it has its own skill). It turns one module's notes into a vertical video with no audio: the creator records the voiceover to the scene start times.
+The go-forward standard for Little Panda Education explainers made from notes (Course Explainers). It turns one module's notes into a vertical video with no audio: the creator records the voiceover to the scene start times.
 
 - [`course_explainer.py`](course_explainer.py) holds the look, the drawing helpers and the render loop. Change it only to change the look for every video.
 - Each video is one small Python file that defines `META`, `DUR` and `SCENES`. Start from [`examples/agentic-ai-m5-autonomous-agents.py`](examples/agentic-ai-m5-autonomous-agents.py).

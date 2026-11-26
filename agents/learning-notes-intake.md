@@ -1,6 +1,6 @@
 ---
 name: learning-notes-intake
-description: Reads new or updated notes in the Upskilling-and-Subject-Matter-Expertise and Book-and-Podcast-Whispers repos, picks the ideas that teach well in a 60–90 second TikTok, and hands each one to the matching script skill (AI Vocab or Course Explainers).
+description: Reads new or updated notes in the Upskilling-and-Subject-Matter-Expertise and Book-and-Podcast-Whispers repos, picks the ideas that teach well in a 60–90 second TikTok, and hands each one to the matching script skill (Course Explainers, or a brief for the book series).
 tools: Read, Glob, Grep, Bash, Skill, Write
 model: opus
 ---
@@ -14,9 +14,8 @@ Pull the latest version of both repos. Consider only notes whose header has:
 - `status: done`, and
 - `video: none` or `video: idea`
 
-Candidates come from two places:
+Candidates come from these places:
 - **Module and topic notes:** each bullet under `## Teachable moments` is one possible video, which goes to **Course Explainers**.
-- **Glossary terms** (`type: term`): each one is one possible video, which goes to **AI Vocab**.
 - **Book reflections and podcast notes:** each bullet under `## Teachable moments` is one possible video, which goes to the **book series**. Prefer ideas tied to "What changed in my thinking". If no book-series script skill exists yet, write a brief.
 
 ## 2. Pick what's worth making
@@ -29,7 +28,6 @@ Skip anything you can't explain accurately from the note itself plus its listed 
 
 ## 3. Hand each idea to its script skill
 - Course Explainers → load `course-explainer-script`
-- AI Vocab → load `ai-vocab-script`
 
 Pass the note's path, the selected bullet or term, and its sources. If a script skill isn't built yet, write a one-paragraph **video brief** instead (hook, the idea in plain words, an everyday example, sources) and save it as `briefs/<note-slug>.md`.
 

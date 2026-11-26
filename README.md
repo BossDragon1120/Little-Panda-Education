@@ -28,7 +28,7 @@ The learning inputs are the flywheel: every course I take and every book I read 
             └────────────────── engagement data shapes what gets made next ◀──────────────┘
 ```
 
-**Why split it up this way:** **agents** handle stages that run on their own, make decisions or call other pieces (scouting, intake, assembling, posting). **Skills** hold the house formats: how a Deal Decoded script is shaped, how an AI Vocab slide looks. Formats change often and agents change rarely, so keeping them apart means a format change never touches an agent.
+**Why split it up this way:** **agents** handle stages that run on their own, make decisions or call other pieces (scouting, intake, assembling, posting). **Skills** hold the house formats: how a Deal Decoded script is shaped, how a Course Explainer looks. Formats change often and agents change rarely, so keeping them apart means a format change never touches an agent.
 
 ## Built for TikTok first
 Every format is designed for TikTok before any other platform:
@@ -36,6 +36,8 @@ Every format is designed for TikTok before any other platform:
 - **Hook in the first seconds**, with an on-screen line, because people decide within a couple of seconds whether to keep watching.
 - **On-screen text throughout**, because many people watch with the sound off.
 - **Key content kept clear of TikTok's on-screen buttons and caption area.**
+
+These layout rules live inside every slide and video skill (see the `TikTok layout` section of the [skill template](templates/skill/SKILL.md)), not in a separate shared skill, so each builder works on its own.
 - **60–90 seconds**: one idea per video, ending with something worth saving or screenshotting.
 
 ## Subjects and series
@@ -43,7 +45,6 @@ Every format is designed for TikTok before any other platform:
 | Subject | Series | Input | What it is | Look |
 |---|---|---|---|---|
 | **Business** | [**Deal Decoded**](series/deal-decoded.md) | 📰 News | $1B+ M&A announcements explained for people who don't work in finance | Navy + lime |
-| **AI** | [**AI Vocab**](series/ai-vocab.md) | 📚 Notes | One AI term per video, in plain language | Same look as Course Explainers (first 10 used Golden Gate Bridge photos) |
 | **AI · Tech · Business** | [**Course Explainers**](series/course-explainers.md) | 📚 Notes | The key ideas from a course module I just took | Frosted text panel over a dusk gradient, one animated diagram per idea |
 | **Any** | _Book series (name TBD)_ | 📖 Books | One idea from this month's book and what it changed in my thinking | |
 | **Tech** | _coming_ | 📰 / 📚 | _To be defined_ | |
@@ -53,14 +54,11 @@ Every format is designed for TikTok before any other platform:
 | Stage | Component | Type | Feeds | Status |
 |---|---|---|---|---|
 | ① Input | [`deal-decoded-scout`](agents/deal-decoded-scout.md) | Agent | Deal Decoded | ✅ Running daily |
-| ① Input | [`learning-notes-intake`](agents/learning-notes-intake.md) | Agent | AI Vocab, Course Explainers, Books | ✅ Built (waiting on notes) |
+| ① Input | [`learning-notes-intake`](agents/learning-notes-intake.md) | Agent | Course Explainers, Books | ✅ Built (waiting on notes) |
 | ② Script | [`deal-decoded-script`](skills/deal-decoded-script) | Skill | Deal Decoded | ✅ Built |
-| ② Script | `ai-vocab-script` | Skill | AI Vocab | 🛠️ Planned |
 | ② Script | `course-explainer-script` | Skill | Course Explainers | 🛠️ Planned |
-| ③ Slides | `tiktok-format` | Skill (shared) | All slide builders | 🛠️ Planned |
 | ③ Slides + ④ Video | [`deal-decoded-video`](skills/deal-decoded-video) | Skill | Deal Decoded | ✅ Built (silent video; voiceover added by me) |
-| ③ Slides | `ai-vocab-slides` | Skill | AI Vocab | 🛠️ Planned |
-| ③ Slides + ④ Video | [`course-explainer-video`](skills/course-explainer-video) | Skill | Course Explainers, AI Vocab | ✅ Built (silent video; voiceover added by me) |
+| ③ Slides + ④ Video | [`course-explainer-video`](skills/course-explainer-video) | Skill | Course Explainers | ✅ Built (silent video; voiceover added by me) |
 | ④ Assemble | `video-assembler` | Agent | All | 🛠️ Planned |
 | ⑤ Publish | `tiktok-poster` | Agent | All | 💡 Idea |
 | ⑤ Learn | `engagement-tracker` | Agent | All, plus inputs | 💡 Idea |
