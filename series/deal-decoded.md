@@ -7,4 +7,6 @@
 **Cadence:** a scout runs each weekday and drafts up to 2 scripts, each with a silent video. I pick, review and record the voiceover.
 **Pipeline status:** Scout ✅ · Script ✅ · Video ✅ (silent; I add the voiceover) · Voiceover merge 🛠️
 
+**Episodes:** [#003 Sanofi → Insmed](../episodes/deal-decoded/2026-11-24-003-sanofi-insmed.md)
+
 ![Deal Decoded #001 frames](../skills/deal-decoded-video/preview.png)
