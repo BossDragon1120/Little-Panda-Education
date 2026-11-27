@@ -17,6 +17,14 @@ One vertical infographic that explains one idea, with light animation: the conte
 | `<slug>.png` | The fully built frame: the cover image, or a photo post. |
 | `<slug>-caption.md` | One catchy title/caption, one hashtag set (8–10 tags), and a "check before posting" list of anything you guessed. |
 
+## Photo carousel (teaser + answer)
+When the creator wants stills instead of a loop, make a two-slide TikTok photo carousel from the same look. Example: [`examples/silicon-vs-optics-carousel/`](examples/silicon-vs-optics-carousel/).
+- **Slide 1 is a short teaser only:** a four-line Anton question hook and a "Swipe for the answer" chip. No diagram, no table, nothing else. Size the panel to the content (about 650 tall) and keep it centered.
+- **Slide 2 is the answer** in plain words: headline takeaway, one sentence, a `versus` table tied to things people use, a "why it matters" box, and the punchline.
+- Add `· 1/2` and `· 2/2` to `topic_tag`. Set `chrome_pills: True` when the top of the photo is bright (sky), so the labels stay readable.
+- Render each slide with `png` mode (built frame only). No MP4 is needed.
+- **Accuracy over hype:** say "starting to", "often" and "more of" where the change is partial. Fact-check every line before calling it final, and list the softened claims in the caption file.
+
 ## Look (shared with course-explainer-video)
 - **Photo background** the creator supplied (default: their bar photo). Crop it to hide clutter (a mouse, a cable, a stranger) with `bg_keep` (keep the top fraction), `bg_zoom`, `bg_dx`/`bg_dy`. Never move the panel to dodge clutter.
 - **Frosted panel, see-through:** blur 12, white wash 120, cards at about 80% opacity, so the photo shows through. Panel x 40–984.

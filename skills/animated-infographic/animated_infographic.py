@@ -11,6 +11,7 @@ See examples/silicon-vs-optics.py. Usage:
   python3 animated_infographic.py examples/<file>.py stills 1 3 6      # frames at those seconds
   python3 animated_infographic.py examples/<file>.py safe              # built frame with TikTok no-go zones drawn on
   python3 animated_infographic.py examples/<file>.py render            # MP4 loop + PNG + caption.md
+  python3 animated_infographic.py examples/<file>.py png               # built frame only (a carousel slide)
 
 Env: FONT_DIR (default ~/dd-fonts), BG=photo and OUT=file.mp4 override META. META sets the photo and how it is cropped (see SKILL.md).
 """
@@ -159,8 +160,13 @@ def punchline(d, t, y, text, s, col=INK, size=46):
 # ---------- fixed chrome above the panel ----------
 def chrome(d):
     m = SPEC.META; y = top() - 52
-    T(d, (X0 - 20, y), m.get('series', 'AI VOCAB'), M(30, 800), WHITE, 1, 'lm')
-    T(d, (X1 + 20, y), m['topic_tag'], fit(lambda z: M(z, 700), m['topic_tag'], 520, 26), (225, 228, 240), 1, 'rm')
+    labels = ((m.get('series', 'AI VOCAB'), M(30, 800), X0 - 20, 'lm', WHITE),
+              (m['topic_tag'], fit(lambda z: M(z, 800 if m.get('chrome_pills') else 700), m['topic_tag'], 520, 26), X1 + 20, 'rm', (225, 228, 240)))
+    for txt, f, x, anc, col in labels:
+        if m.get('chrome_pills'):   # dark pill behind each label: reads on a bright sky or a light photo
+            b = d.textbbox((x, y), txt, font=f, anchor=anc)
+            d.rounded_rectangle((b[0] - 16, b[1] - 12, b[2] + 16, b[3] + 12), 22, fill=INK + (170,)); col = WHITE
+        T(d, (x, y), txt, f, col, 1, anc)
 
 # ---------- frames ----------
 def frame(t):
@@ -199,6 +205,8 @@ if __name__ == '__main__':
     stem = out[:-4]; built = SPEC.META.get('built_at', SPEC.META.get('loop', 12.0) - 1.0)
     if mode == 'stills':
         for ts in sys.argv[3:]: p = f'{stem}-t{ts}.png'; frame(float(ts)).save(p); print(p)
+    elif mode == 'png':                  # built frame only: one slide of a photo carousel
+        p = f'{stem}.png'; frame(built).save(p); print(p)
     elif mode == 'safe':
         p = f'{stem}-safe.png'; safe_overlay(frame(built)).save(p); print(p)
     else:

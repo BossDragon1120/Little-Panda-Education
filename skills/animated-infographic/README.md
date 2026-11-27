@@ -13,4 +13,6 @@ BG=photo.jpg OUT=out/silicon-vs-optics.mp4 python3 animated_infographic.py examp
 BG=photo.jpg OUT=out/silicon-vs-optics.mp4 python3 animated_infographic.py examples/silicon-vs-optics.py render   # mp4 + png + caption
 ```
 
+It can also make a two-slide photo carousel (short teaser, then the answer) with `png` mode: see [`examples/silicon-vs-optics-carousel/`](examples/silicon-vs-optics-carousel/).
+
 See [SKILL.md](SKILL.md) for the full instructions.
